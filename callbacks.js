@@ -90,7 +90,7 @@ contains(foods, 'ribeye', (result) => {
 
 function removeDuplicates(arr, cb) {
 	var newFoodArr = [];
-	for (var i = 0; i < arr.length; i+=){
+	for (var i = 0; i < arr.length; i+=1){
 		if(newFoodArr.indexOf(arr[i]) == -1) {
 			newFoodArr.push(arr[i]);
 		}
