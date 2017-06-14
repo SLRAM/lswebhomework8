@@ -96,7 +96,6 @@ function removeDuplicates(arr, cb) {
 		}
 		else{
 			var index = newFoodArr.indexOf(arr[i]);
-			console.log(arr[i]);
 			newFoodArr.splice(index,1);
 		}
 	}
