@@ -89,13 +89,18 @@ contains(foods, 'ribeye', (result) => {
 // Pass the array to the callback function.  Do not mutate the original array.
 
 function removeDuplicates(arr, cb) {
-	var newarr = [];
+	var newFoodArr = [];
 	for (var i = 0; i < arr.length; i++){
-		if(newarr.indexOf(arr[i]) == -1) {
-			newarr.push(arr[i]);
+		if(newFoodArr.indexOf(arr[i]) == -1) {
+			newFoodArr.push(arr[i]);
+		}
+		else{
+			var index = newFoodArr.indexOf(arr[i]);
+			console.log(arr[i]);
+			newFoodArr.splice(index,1);
 		}
 	}
-	cb(newarr);
+	cb(newFoodArr);
 };
 
 removeDuplicates(foods, (uniqueFoods) => {
@@ -104,15 +109,14 @@ removeDuplicates(foods, (uniqueFoods) => {
 
 // Write a function called forEach that iterates over the provided array and passes the value and index into the callback.
 
-function forEach(arr, cb) {
-	var val = 0;
-	var ind = 0;
-	for(var i=0; i<arr.length; i++)
-		{ 
-			val = arr[i];
-			ind = i + 1;
-			cb(val, ind);
-		}
+function forEach(arr,cb) {
+	for(var i=0; i<arr.length; i+=1) {
+		var value= arr[i];
+		var index=i;
+		cb(value,index)
+
+	}
+
 };
 
 forEach(foods, (value, index) => {
